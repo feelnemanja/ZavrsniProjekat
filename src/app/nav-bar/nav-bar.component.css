@@ -1,0 +1,50 @@
+.logosize{
+    width: 100px;
+    height: 40px;
+    }
+.navbar-toggler-icon{
+    color: gray;
+}
+badge {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 50%;
+}
+
+#lblCartCount {
+    font-size: 12px;
+    background: gray;
+    color: #fff;
+    padding: 0 4px;
+    vertical-align: top;
+    margin-left: -10px;
+}
+#IconsSM{
+    display: none;
+    padding: 0px;
+}
+#IconsLG{
+    display: block;
+    padding-right: 50px;
+}
+#linksposition{
+    margin-left: 250px;
+}
+.navbar-brand{
+    padding-left: 50px;
+}
+@media (max-width: 992px){#linksposition{
+    margin-left: 0px;
+}}
+@media (max-width: 768px){
+    .navbar-brand{padding: 0;}
+}
+@media (max-width: 576px){
+    #IconsSM{
+        display: block;
+    }
+    #IconsLG{
+        display: none;
+    }
+    .navbar-brand{padding: 0;}
+}

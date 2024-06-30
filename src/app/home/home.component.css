@@ -1,0 +1,74 @@
+#background-image-container {
+    min-height: 450px;
+    background-size: cover;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-align: end;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.textposition {
+    display: flex;
+    justify-content: center;
+}
+
+.flower-img-size {
+    width: 230px;
+    height: 230px;
+}
+
+.flower-img-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.input-size {
+    width: 200px;
+}
+.home-form-style{
+border-top-color: white;
+border-left-color: white;
+border-right-color: white;
+outline: white;
+border-radius: 0;
+border-bottom: 2px solid black;
+}
+.form-control:focus-visible {
+
+    box-shadow: none;
+
+}
+.form-width-setting{width: 290px;}
+.form-width2-setting{width: 600px;}
+.send-get-well-wishes{
+    background-color: #feaeb7;
+    min-height: 400px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.newsletterinput{
+    border: 2px solid black;
+    margin-right: 30px;
+    width: 300px;
+    
+}
+@media (max-width: 992px)
+{.newsletterinput{
+    width: auto;;
+}}
