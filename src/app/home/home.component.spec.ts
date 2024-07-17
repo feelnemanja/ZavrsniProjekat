@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
-import { Component, NgModule } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 
 
 describe('HomeComponent', () => {
@@ -25,10 +25,11 @@ describe('HomeComponent', () => {
 });
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+
 @NgModule({
   declarations: [ /* your components */],
   imports: [
-    MatSlideToggleModule
+    MatSlideToggleModule, 
   ],
   providers: [],
   bootstrap: [ /* your root component */]

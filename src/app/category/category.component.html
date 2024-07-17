@@ -1,0 +1,22 @@
+<div class="container-fluid p-0">
+  <div class="row gx-0">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-3 category-img-position" *ngFor="let status of statuses"
+      (click)="selectAccountByStatus(status.name)">
+      <p class="text-center">{{ status.name }}</p>
+      <img class="category-img" [src]="status.imgSrc" [alt]="status.name">
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row px-5 mx-5">
+    <div class="col-lg-4 col-md-6 col-sm-12 flower-img-position p-0 g-0 mb-3" *ngFor="let product of products" >
+      <a [routerLink]="['/product', product.id]">
+      <img class="flower-img-size" [src]="product.imgSrc" [alt]="product.status" routerLink="/products">
+    </a>
+      <span>{{ product.title }}</span>
+      <span class="font-italic">${{ product.price }}</span>
+    </div>
+  </div>
+
+
+  <router-outlet></router-outlet>

@@ -26,70 +26,24 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row p-5">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower1.jpeg" alt="error">
-                <span>Fiesta BouqUet</span>
-                <span> $60 </span>
+    <div class="testiranjesrbijadanska">
+        <div class="container">
+            <div class="row">
+                @for(post of posts; track post){
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <app-post [post]="post"></app-post>
+                    </div>
+                }
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower2.jpeg" alt="error">
-                <span>Alluring Elegance Bouquete</span>
-                <span> $72 </span>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower3.jpeg" alt="error">
-                <span>Beyond Blue Bouquet</span>
-                <span> $55 </span>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower4.jpeg" alt="error">
-                <span>Mixed Roses</span>
-                <span> $35 </span>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower5.jpeg" alt="error">
-                <span>Belle of the Ball Bouquet</span>
-                <span> $45 </span>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower6.jpeg" alt="error">
-                <span>Rainbow Garden </span>
-                <span> $50 </span>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower7.jpeg" alt="error">
-                <span>Best Day Bouquet</span>
-                <span> $61 </span>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="flower-img-position">
-                <img class="flower-img-size" src="flower8.jpeg" alt="error">
-                <span>Smiles & Sunshine</span>
-                <span> $45 </span>
-            </div>
-        </div>
-
-
-        <div class="flower-img-position">
-            <button class="btn btn-light text-secondary border-secondary"> Load more</button>
-        </div>
+        
     </div>
-
+       
+        <div class="flower-img-position">
+            <button class="btn btn-light text-secondary border-secondary" routerLink="/shop"> Load more</button>
+        </div>
+    
+    <br>   
     <div class="container-fluid">
         <div class="row ">
 

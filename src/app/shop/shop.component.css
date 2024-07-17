@@ -1,0 +1,12 @@
+.flower-img-size {
+    width: 230px;
+    height: 230px;
+}
+
+.flower-img-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}

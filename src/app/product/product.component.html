@@ -1,0 +1,38 @@
+<div>
+  <br>  
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbs; let last = last">
+      <span>{{ breadcrumb.label }}</span>
+      <span *ngIf="!last" aria-hidden="true">/</span>
+    </li>
+  </ol>
+</nav>
+
+<div class="product-crumbs-buttons mx-5"> 
+  <span class="" (click)="showPreviousProduct()"> < Prev </span> 
+  <span (click)="showNextProduct()">| Next > </span>
+</div>
+</div>
+
+<div class="container-fluid" style="min-height: 500px;">
+<div class="row mx-5 px-5">
+<div *ngIf="product" class="col-lg-6 col-md-12 col-sm-12 product-img-position">
+    
+    <img [src]="product.imgSrc" [alt]="product.status" class="product-img-style">
+
+</div>
+<div *ngIf="product" class="col-lg-6 col-md-12 col-sm-12 ">
+
+<h5>{{product.title}}</h5>
+<h5>{{product.price}}$</h5>
+<span>{{product.description}} </span>
+<hr>
+<label>Quantity:</label><br>
+<input style="width: 100px;"><br>
+<button class="btn btn-dark text-light mt-1"> Add to cart</button>
+
+</div>
+</div>
+<div>
+ 

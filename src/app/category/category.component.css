@@ -1,0 +1,33 @@
+.flower-img-size {
+    width: 250px;
+    height: 250px;
+}
+
+.flower-img-position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+   
+}
+.category-img-position{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.category-img{
+    width: 100px; 
+    height: 100px;
+    border-bottom: 2px solid pink;
+}
+@media (max-width: 576px){
+    .category-img{
+        width: 75px; 
+        height: 75px;
+        border-bottom: 2px solid pink;
+    }
+}
