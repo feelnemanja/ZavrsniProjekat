@@ -1,0 +1,29 @@
+.shopping-cart-wrapper {
+    min-height: 500px;
+}
+
+.shoppping-cart-img {
+    width: 100px;
+    height: 100px;
+}
+
+.shopping-cart-calculation {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.shopping-cart-product {
+    display: flex;
+    flex-direction: row;
+}
+
+.quantity-input {
+    height: 25px;
+    width: 75px;
+}
+
+.calculator-style {
+    display: flex;
+    justify-content: space-between;
+}

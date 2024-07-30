@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="container login-container" style="background-image: url('/loginBackground.jpg');"
+        id="signup-container-image">
+
+        <div class="row mt-1">
+            <div class="col-12 mt-0 login-elements-style mx-0">
+                <h4> Sign Up</h4>
+
+                <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form-style-login mt-3">
+
+                    <label for="name">First Name</label>
+                    <input type="text" ngModel name="name" id="name" class="form-control px-5" minlength="5" required
+                        #name="ngModel">
+                    @if(!name.valid && name.touched){
+                    <span class="help-block">Name is required.</span><br>
+                    }
+
+                    <label for="surname">Last Name</label>
+                    <input type="text" ngModel name="surname" id="surname" class="form-control" minlength="5" required
+                        #surname="ngModel">
+                    @if(!surname.valid && surname.touched){
+                    <span class="help-block">Surname is required.</span><br>
+                    }
+
+                    <label for="email" class="text-left">Email</label>
+                    <input type="email" ngModel name="email" id="email" class="form-control mx-0" required email
+                        #email="ngModel">
+                    @if(!email.valid && email.touched){
+                    <span class="help-block">Email is required.</span><br>
+                    }
+
+                    <label for="password">Password</label>
+                    <input type="password" ngModel name="password" id="password" class="form-control" minlength="5"
+                        required #password="ngModel">
+                    @if(!password.valid && password.touched){
+                    <span class="help-block">Password is required.</span><br>
+                    }
+                    <br>
+
+                    <span class="mt-5 pt-5"> Forgot password?</span>
+                    <button type="submit" [disabled]="!myForm.valid" class="btn btn-secondary w-100 mt-2">Sign
+                        Up</button>
+
+                </form>
+                <span class="text-center">Already a member? <u><span routerLink="/login" style="cursor: pointer;"> Log
+                            in</span></u> </span>
+            </div>
+        </div>
+    </div>
+</div>

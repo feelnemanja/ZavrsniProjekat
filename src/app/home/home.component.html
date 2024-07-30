@@ -6,7 +6,6 @@
         <button class="btn btn-secondary text-light">SHOP FLOWERS</button>
     </div>
 
-
 </div>
 <div class="container-fluid w-75 my-5 textposition">
     <span>
@@ -22,28 +21,25 @@
         service.
     </span>
 
-
 </div>
 
 <div class="container-fluid">
-    <div class="testiranjesrbijadanska">
-        <div class="container">
-            <div class="row">
-                @for(post of posts; track post){
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <app-post [post]="post"></app-post>
-                    </div>
-                }
+
+    <div class="container">
+        <div class="row">
+            @for(post of posts; track post){
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <app-post [post]="post"></app-post>
             </div>
+            }
         </div>
-        
     </div>
-       
-        <div class="flower-img-position">
-            <button class="btn btn-light text-secondary border-secondary" routerLink="/shop"> Load more</button>
-        </div>
-    
-    <br>   
+
+
+    <div class="flower-img-position">
+        <button class="btn btn-light text-secondary border-secondary" routerLink="/shop"> Load more</button>
+    </div>
+    <br>
     <div class="container-fluid">
         <div class="row ">
 
@@ -66,60 +62,68 @@
             <div class="col-lg-7 col-md-7 col-sm-12" style="min-height: 400px; padding-left: 60px;">
                 <br>
                 <br>
-                <form>
+
+                <form (ngSubmit)="onSubmit()" #myForm="ngForm">
                     <div class="row">
                         <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                            <label for="inputEmail4" class="px-3">Name</label>
-                            <input type="email" class="form-control home-form-style" id="inputEmail4">
+                            <label for="name" class="px-3">Name</label>
+                            <input type="text" ngModel name="name" id="name"
+                                class="form-control home-form-style form-width-setting" required>
+
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                            <label for="inputPassword4" class="px-3">Email</label>
-                            <input type="password" class="form-control home-form-style" id="inputPassword4">
+                            <label for="email" class="px-3">Email</label>
+                            <input type="email" ngModel name="email" id="email"
+                                class="form-control home-form-style form-width-setting" required email #email="ngModel">
+
+                            @if(!email.valid && email.touched){
+                            <span class="help-block">Email must be valid.</span>
+                            }
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="p-3">Subject</label>
+                            <input type="text" ngModel class="form-control home-form-style py-0" name="subject"
+                                id="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="p-3">Message</label>
+                            <input type="text" ngModel class="form-control home-form-style py-2" name="message"
+                                id="message">
+                        </div>
+
+                        <br>
+                        <div class="flower-img-position">
+                            <button type="submit" [disabled]="!myForm.valid"
+                                class="btn btn-light text-secondary border-secondary mt-2"> SEND</button>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress" class="p-3">Subject</label>
-                        <input type="text" class="form-control home-form-style py-0" id="inputAddress">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputAddress2" class="p-3">Message</label>
-                        <input type="text" class="form-control home-form-style py-2" id="inputAddress2">
-                    </div>
                 </form>
-                <br>
-                <div class="flower-img-position">
-                    <button class="btn btn-light text-secondary border-secondary"> SEND</button>
-                </div>
-                <br>
                 <p> Get our newsletters</p>
                 <div class="d-flex align-items-start">
                     <input type="text" id="name" class="newsletterinput p-2 text-left"
                         placeholder="Enter your email here">
                     <button class="btn btn-dark text-white py-2"> Subscribe Now</button>
                 </div>
-                <br>
             </div>
+            <br>
         </div>
+        <br>
     </div>
+</div>
 
-    <div class="container-fluid m-0 p-0">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 send-get-well-wishes">
-                <h3 class="text-light">Send Get Well Wishes</h3>
-                <p class="text-light"> Brithen their recovery with beautiful florals, plants, and gifts that will
-                    express your well wishes</p>
-                 <span class="badge bg-secondary"> SHOP GET WELL FLOWERS & GIFTS </span>
-            </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 send-get-well-wishes">
+            <h3 class="text-light">Send Get Well Wishes</h3>
+            <p class="text-light"> Brithen their recovery with beautiful florals, plants, and gifts that will
+                express your well wishes</p>
+            <span class="badge bg-secondary"> SHOP GET WELL FLOWERS & GIFTS </span>
+        </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12" style="background-image: url('/FTD_SplitBanner_Merx_1.png'); 
+        <div class="col-lg-6 col-md-6 col-sm-12" style="background-image: url('/FTD_SplitBanner_Merx_1.png'); 
             background-size: cover; background-position: center; min-height: 400px;">
 
-            </div>
         </div>
     </div>
-
-
-
-
-
 </div>

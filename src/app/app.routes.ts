@@ -5,6 +5,10 @@ import { CategoryComponent } from './category/category.component';
 
 import { NgModule } from '@angular/core';
 import { ProductComponent } from './product/product.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ShopingCartComponent } from './shoping-cart/shoping-cart.component';
+import { ProductOrderComponent } from './product-order/product-order.component';
 
 
 
@@ -17,5 +21,9 @@ export const routes: Routes = [
           ]
     },
     { path: 'product/:id', component: ProductComponent },
+    { path: 'login', component: LogInComponent},
+    { path: 'signup', component: SignUpComponent},
+    { path: 'shoppingcart', component: ShopingCartComponent},
+    { path: 'productorder', component: ProductOrderComponent},
     
 ]

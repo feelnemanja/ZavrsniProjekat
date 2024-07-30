@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddProductService } from '../add-product.service';
+import { AddProductService } from '../services/add-product.service';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -14,10 +14,10 @@ import { Product } from '../modals/Post';
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css'
 })
-export class ShopComponent  {
+export class ShopComponent {
 
   constructor(
-    
+
   ) { }
 
 }

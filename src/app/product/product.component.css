@@ -1,21 +1,27 @@
-.product-crumbs-buttons{
+.product-crumbs-buttons {
     display: flex;
     justify-content: end;
 }
-.product-img-style{
-    
+
+.product-img-style {
+
     width: 350px;
     height: 350px;
 }
-.product-img-position{
+
+.product-img-position {
     display: flex;
     justify-content: end;
 }
-@media (max-width: 992px)
-{
-    .product-img-position{
+
+.last-next {
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .product-img-position {
         display: block;
-        
+
     }
 
 }

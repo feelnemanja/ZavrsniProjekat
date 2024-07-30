@@ -33,26 +33,34 @@
     flex-direction: column;
 }
 
-
 .input-size {
     width: 200px;
 }
-.home-form-style{
-border-top-color: white;
-border-left-color: white;
-border-right-color: white;
-outline: white;
-border-radius: 0;
-border-bottom: 2px solid black;
+
+.home-form-style {
+    border-top-color: white;
+    border-left-color: white;
+    border-right-color: white;
+    outline: white;
+    border-radius: 0;
+    border-bottom: 2px solid black;
 }
+
 .form-control:focus-visible {
 
     box-shadow: none;
 
 }
-.form-width-setting{width: 290px;}
-.form-width2-setting{width: 600px;}
-.send-get-well-wishes{
+
+.form-width-setting {
+    width: 290px;
+}
+
+.form-width2-setting {
+    width: 600px;
+}
+
+.send-get-well-wishes {
     background-color: #feaeb7;
     min-height: 400px;
     box-sizing: border-box;
@@ -62,13 +70,25 @@ border-bottom: 2px solid black;
     text-align: center;
     flex-direction: column;
 }
-.newsletterinput{
+
+.newsletterinput {
     border: 2px solid black;
     margin-right: 30px;
     width: 300px;
-    
+
 }
-@media (max-width: 992px)
-{.newsletterinput{
-    width: auto;;
-}}
+
+.ng-invalid.ng-touched {
+    border-bottom-color: red;
+}
+
+.help-block {
+    color: red;
+}
+
+@media (max-width: 992px) {
+    .newsletterinput {
+        width: auto;
+        ;
+    }
+}

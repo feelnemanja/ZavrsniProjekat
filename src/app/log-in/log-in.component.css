@@ -1,0 +1,41 @@
+#login-container-image {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-size: 80%;
+}
+
+.inner {
+
+  height: 600px;
+}
+
+.login-elements-style {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+}
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.help-block {
+  color: red;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-style-login {
+  text-align: left;
+}

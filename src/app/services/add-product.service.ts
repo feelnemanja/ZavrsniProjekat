@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Product } from './modals/Post';
+import { Product } from '../modals/Post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddProductService {
-  
+
   statuses = [
     { name: 'sympathy', imgSrc: 'category1.png', status: "sympathy" },
-    { name: 'anniversary', imgSrc: 'category2.png', status: "anniversary"  },
+    { name: 'anniversary', imgSrc: 'category2.png', status: "anniversary" },
     { name: 'congratulations', imgSrc: 'category3.png', status: "congratulations" },
     { name: 'getwell', imgSrc: 'category4.png', status: "getwell" }
-    
+
   ];
 
   products: Product[] = [
@@ -40,23 +40,23 @@ export class AddProductService {
     new Product(22, "Bliss White Orchid", "product23.PNG", 68, "congratulations", "The most popular variety of this plant, the Phalaenopsis orchid makes a great gift for plant lovers and plant beginners alike! White orchids are easy to care for and add a touch of delicate beauty to any home, office or table."),
     new Product(23, "CLASSIC WHITE CALLA LILY", "product24.PNG", 58, "congratulations", "This houseplant is great for making every day bright. Whether perched on a windowsill or gifted to a friend in need of a smile, the pure white tones and healthy greenery add a delicate touch to any space. This plant loves rich soil and plenty of sun."),
     new Product(24, "SPRING FLING TULIP BULB GARDEN", "product25.PNG", 45, "congratulations", "Grow a pop of color for the changing season with the Assorted Spring Tulip Garden blooming pink, yellow and purple flowers. Nothing revitalizes a space like fresh flowers. Packed with bold bell-shaped blooms, this bulb garden is the perfect gift for any occasion."),
-    new Product(25, "CONGRATS BELGIAN CHOCOLATE COVERED BERRY-GRAM", "product26.PNG", 55, "congratulations", "Artisan Crafted Belgian Chocolate Covered Treats Crafted in a Small Batch Kitchen 12 Strawberries Hand Dipped in Belgian Dark Chocolate Hand Decorated with drizzles and White Chocolate Letters spelling out \"\"CONGRATS\"\" Arrives in an Elegant Gift Box.") 
+    new Product(25, "CONGRATS BELGIAN CHOCOLATE COVERED BERRY-GRAM", "product26.PNG", 55, "congratulations", "Artisan Crafted Belgian Chocolate Covered Treats Crafted in a Small Batch Kitchen 12 Strawberries Hand Dipped in Belgian Dark Chocolate Hand Decorated with drizzles and White Chocolate Letters spelling out \"\"CONGRATS\"\" Arrives in an Elegant Gift Box.")
   ];
-constructor(){}
+  constructor() { }
 
-getProductsByStatus(status: string): Product[] {
-  return this.products.filter(product => product.status === status);
-}
-getProductByTitle(title: string): Product | undefined {
- 
-  return this.products.find(product => product.title.toLowerCase() === title.toLowerCase());
-}
+  getProductsByStatus(status: string): Product[] {
+    return this.products.filter(product => product.status === status);
+  }
+  getProductByTitle(title: string): Product | undefined {
 
-getProductById(id: number): Product | undefined {
-  return this.products.find(product => product.id === id);
-}
+    return this.products.find(product => product.title.toLowerCase() === title.toLowerCase());
+  }
 
-getAllProducts(): Product[] {
-  return this.products;
-}
+  getProductById(id: number): Product | undefined {
+    return this.products.find(product => product.id === id);
+  }
+
+  getAllProducts(): Product[] {
+    return this.products;
+  }
 }

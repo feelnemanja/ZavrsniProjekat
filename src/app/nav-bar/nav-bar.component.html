@@ -1,42 +1,46 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-2" aria-label="Sixth navbar example">
-    <div class="container-fluid">
-      
-      <button class="navbar-toggler btn-secondary border border-secondary" type="button" 
-      data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" 
-      aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-danger"></span>
-      </button>
+  <div class="container-fluid">
 
-      <div class="collapse navbar-collapse" id="navbarsExample06">
-        <a class="navbar-brand" href="#"><img class="logosize" src="flowerLogo.png" ></a>
-        <ul class="navbar-nav me-auto mb-2 mb-xl-0" id="linksposition">
-          <li class="nav-item">
-            <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">About</a>
-          </li>
-          <li class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-            <a class="nav-link text-secondary" routerLink="/shop">Shop</a>
-          </li>
-          <li class="nav-item text-secondary">
-            <a class="nav-link text-secondary" href="#" >Contact</a>
-          </li>
-          <div class="" id="IconsSM">
-            <i class="fa-solid fa-user px-1"></i>
-            <i class="fa-solid fa-caret-down px-1"></i>
-            <i class="fa-solid fa-cart-shopping px-1"></i>
-            <span class='badge badge-secondary' id='lblCartCount'> 1 </span>
-           </div>
-        </ul>
-       
-      </div>
-      <div class="" id="IconsLG">
-        <i class="fa-solid fa-user px-1"></i>
-        <i class="fa-solid fa-caret-down px-1"></i>
-        <i class="fa-solid fa-cart-shopping px-1"></i>
-        <span class='badge badge-secondary' id='lblCartCount'> 1 </span>
-       </div>
+    <button class="navbar-toggler btn-secondary border border-secondary" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-danger"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample06">
+      <a class="navbar-brand" href="#"><img class="logosize" src="flowerLogo.png"></a>
+      <ul class="navbar-nav me-auto mb-2 mb-xl-0" id="linksposition">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">About</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link text-secondary" routerLink="/shop">Shop</a>
+        </li>
+        <li class="nav-item text-secondary">
+          <a class="nav-link text-secondary" href="#">Contact</a>
+        </li>
+        <div class="" id="IconsSM">
+          <i class="fa-solid fa-user px-1"></i>
+          <i class="fa-solid fa-caret-down px-1"></i>
+          <span routerLink="/login" style="cursor: pointer;"> Login </span>
+          <i class="fa-solid fa-cart-shopping px-1" routerLink="/shoppingcart" style="cursor: pointer;"></i>
+
+          <span class='badge badge-secondary' id='lblCartCount'> {{ totalQuantity }} </span><br>
+
+        </div>
+      </ul>
+
     </div>
-    
-  </nav>
+    <div class="" id="IconsLG">
+      <i class="fa-solid fa-user px-1"></i>
+      <i class="fa-solid fa-caret-down px-1"></i>
+      <span routerLink="/login" style="cursor: pointer;"> Login </span>
+      <i class="fa-solid fa-cart-shopping px-1" routerLink="/shoppingcart" style="cursor: pointer;"></i>
+      <span class='badge badge-secondary' id='lblCartCount'> {{ totalQuantity }} </span>
+    </div>
+  </div>
+
+</nav>

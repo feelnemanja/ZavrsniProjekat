@@ -1,51 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../modals/Post';
 import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
-import { AddProductService } from '../add-product.service';
+import { AddProductService } from '../services/add-product.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CartService } from '../services/shopping-cart-service';
 
 
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
 
 
-  export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit {
+
   products: Product[] = [];
   product: Product | undefined;
   status: string = '';
   currentIndex: number = 0;
   breadcrumbs: { label: string, url: string }[] = [];
+  quantity: number = 0;
 
-    
-    constructor(
-      private route: ActivatedRoute,
-      private router: Router,
-      private productService: AddProductService
-    ) {}
-  
-    ngOnInit(): void {
-      this.products = this.productService.getAllProducts();
+
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private productService: AddProductService,
+    private cartService: CartService
+  ) { }
+
+  ngOnInit(): void {
+    this.products = this.productService.getAllProducts();
 
     this.route.params.subscribe((params: Params) => {
       const productId = +params['id'];
       this.product = this.productService.getProductById(productId);
       this.currentIndex = this.products.findIndex(p => p.id === productId);
-
       this.generateBreadcrumbs();
     });
-    }
-    showProductByName(name: string) {
-      this.product = this.productService.getProductByTitle(name);
-    }
-  
-    showNextProduct() {
-      if (!this.product) return;
+  }
+  showProductByName(name: string) {
+    this.product = this.productService.getProductByTitle(name);
+  }
+
+  showNextProduct() {
+    if (!this.product) return;
 
     const nextIndex = (this.currentIndex + 1) % this.products.length;
     this.product = this.products[nextIndex];
@@ -53,45 +57,49 @@ import { CommonModule } from '@angular/common';
     this.updateRoute(this.product.id);
     this.generateBreadcrumbs();
   }
-  
-    showPreviousProduct() {
-      if (!this.product) return;
+
+  showPreviousProduct() {
+    if (!this.product) return;
 
     const previousIndex = (this.currentIndex - 1 + this.products.length) % this.products.length;
     this.product = this.products[previousIndex];
     this.currentIndex = previousIndex;
     this.updateRoute(this.product.id);
     this.generateBreadcrumbs();
-    }
-  
-    updateRoute(productId: number) {
-      this.router.navigate(['/product', productId]);
-    }
-
-    generateBreadcrumbs() {
-      this.breadcrumbs = [];
-
-      this.breadcrumbs.push({ label: 'Home', url: '' });
-
-      this.breadcrumbs.push({ label: 'Shop', url: 'shop' });
-    
-      if (this.product?.status) {
-        const statusBreadcrumb = this.productService.statuses.find(s => s.status === this.product!.status);
-        if (statusBreadcrumb) {
-          this.breadcrumbs.push({ label: statusBreadcrumb.name, url: `shop${statusBreadcrumb.status}` });
-        }
-      }
-    
-      if (this.product) {
-        this.breadcrumbs.push({ label: this.product.title, url: `shop${this.product.status}${this.product.title}` });
-      }
-    }
   }
 
-  
-  
-    
-  
+  updateRoute(productId: number) {
+    this.router.navigate(['/product', productId]);
+  }
+
+  generateBreadcrumbs() {
+    this.breadcrumbs = [];
+    this.breadcrumbs.push({ label: 'Home', url: '' });
+    this.breadcrumbs.push({ label: 'Shop', url: 'shop' });
+
+    if (this.product?.status) {
+      const statusBreadcrumb = this.productService.statuses.find(s => s.status === this.product!.status);
+      if (statusBreadcrumb) {
+        this.breadcrumbs.push({ label: statusBreadcrumb.name, url: `shop${statusBreadcrumb.status}` });
+      }
+    }
+
+    if (this.product) {
+      this.breadcrumbs.push({ label: this.product.title, url: `shop${this.product.status}${this.product.title}` });
+    }
+  }
+  addToCart(product: Product) {
+    const quantityToAdd = this.quantity || 1;
+    const productToAdd = { ...product, quantity: quantityToAdd };
+    this.cartService.addToCart(productToAdd);
+    this.quantity = 0;
+  }
+}
+
+
+
+
+
 
 
 

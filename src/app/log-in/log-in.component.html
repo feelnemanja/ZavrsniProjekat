@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="container login-container" style="background-image: url('/loginBackground.jpg');"
+        id="login-container-image">
+
+        <div class="row mt-3">
+            <div class="col-12 mt-0 login-elements-style">
+                <h4> Log In</h4>
+                <span>New to this site? <u><span routerLink="/signup" style="cursor: pointer;">Sign Up</span></u></span>
+                <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form-style-login mt-3">
+                    <label for="email" class="text-left mt-3">Email</label>
+                    <input type="email" ngModel name="email" id="email" class="form-control mx-0 text-left" required
+                        email #email="ngModel">
+                    @if(!email.valid && email.touched){
+                    <span class="help-block">Email is required.</span><br>
+                    }
+
+                    <label for="password">Password</label>
+                    <input type="password" ngModel name="password" id="password" class="form-control px-5" minlength="5"
+                        required #password="ngModel">
+                    @if(!password.valid && password.touched){
+                    <span class="help-block">Password is required.</span><br>
+                    }
+                    <br>
+                    <br>
+                    <br>
+                    <span class="mt-5 pt-5"> Forgot password?</span>
+                    <button type="submit" [disabled]="!myForm.valid" class="btn btn-secondary w-100 mt-2">Log
+                        In</button>
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
