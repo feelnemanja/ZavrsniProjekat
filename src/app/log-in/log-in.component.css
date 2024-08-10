@@ -1,13 +1,17 @@
 #login-container-image {
   min-height: 600px;
+  background-image: url('/loginBackground.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-position: center;
-  background-size: 80%;
+  background-size: 90%;
 }
-
+img {
+  width: 100%;
+  height: auto;
+}
 .inner {
 
   height: 600px;

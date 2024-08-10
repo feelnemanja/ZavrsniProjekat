@@ -15,11 +15,12 @@ import { CommonModule } from '@angular/common';
 
 
 
+
 @Component({
   selector: 'app-root', 
   standalone: true,
   imports: [RouterOutlet, FooterComponent, HomeComponent, NavBarComponent, SocialSidebarComponent, MatButtonModule,
-    MatFormFieldModule, MatInputModule, FormsModule, MatSlideToggleModule, CommonModule, RouterModule],
+    MatFormFieldModule, MatInputModule, FormsModule, MatSlideToggleModule, CommonModule, RouterModule,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 

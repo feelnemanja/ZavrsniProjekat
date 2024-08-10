@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ZavrsniProjekat": "node dist/zavrsni-projekat/server/server.mjs"
+    
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "angular-font-awesome": "^3.1.2",
+    "angular-in-memory-web-api": "^0.18.0",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
     "font-awesome": "^4.7.0",

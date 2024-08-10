@@ -6,20 +6,20 @@
             <div class="col-12 mt-0 login-elements-style mx-0">
                 <h4> Sign Up</h4>
 
-                <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form-style-login mt-3">
+                <form (ngSubmit)="signUp()" #myForm="ngForm" class="form-style-login mt-3">
 
                     <label for="name">First Name</label>
                     <input type="text" ngModel name="name" id="name" class="form-control px-5" minlength="5" required
                         #name="ngModel">
                     @if(!name.valid && name.touched){
-                    <span class="help-block">Name is required.</span><br>
+                    <span class="help-block">Name is required and must be minimum 5 letters</span><br>
                     }
 
                     <label for="surname">Last Name</label>
                     <input type="text" ngModel name="surname" id="surname" class="form-control" minlength="5" required
                         #surname="ngModel">
                     @if(!surname.valid && surname.touched){
-                    <span class="help-block">Surname is required.</span><br>
+                    <span class="help-block">Surname is required and must be minimum 5 letters</span><br>
                     }
 
                     <label for="email" class="text-left">Email</label>
@@ -46,5 +46,16 @@
                             in</span></u> </span>
             </div>
         </div>
+    </div>
+</div>
+<div class="modal" [ngClass]="{ 'show': isModalVisible }">
+    
+    <div class="modal-contentt">
+        
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h5>Thank you for registering!</h5>
+        <span> Enjoy your shopping!</span>
+        <button class="btn btn-dark text-light w-25 p-0 px-0 mt-2" routerLink="/login"> Log In </button>
+    
     </div>
 </div>

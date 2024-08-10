@@ -5,6 +5,7 @@ import { AddProductService } from '../services/add-product.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../services/shopping-cart-service';
+import { AuthService } from '../services/auth-service';
 
 
 
@@ -25,13 +26,15 @@ export class ProductComponent implements OnInit {
   currentIndex: number = 0;
   breadcrumbs: { label: string, url: string }[] = [];
   quantity: number = 0;
-
+  isModalVisible = false;  
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private productService: AddProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private authService: AuthService
+
   ) { }
 
   ngOnInit(): void {
@@ -89,10 +92,25 @@ export class ProductComponent implements OnInit {
     }
   }
   addToCart(product: Product) {
+    if (!this.authService.userData) {
+      this.isModalVisible = true;  // Show modal if user is not logged in
+      return;
+    }
     const quantityToAdd = this.quantity || 1;
     const productToAdd = { ...product, quantity: quantityToAdd };
     this.cartService.addToCart(productToAdd);
     this.quantity = 0;
+  }
+
+  validateQuantity() {
+    if (this.quantity < 1) {
+      alert("Quantity must be at least 1.");
+      this.quantity = 1;
+    }
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
   }
 }
 

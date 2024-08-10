@@ -8,28 +8,52 @@
                         <label for="name" class="mt-2 mx-2">First Name<span class="text-danger">*</span>:</label>
                         <input type="text" name="name" id="name"
                             class="form-control home-form-style form-width-setting py-0" formControlName="name">
+                        <span *ngIf="productOrderForm.get('name')?.touched && productOrderForm.get('name')?.invalid"
+                            class="text-danger">
+                            Name is required.
+                        </span>
+
 
                     </div>
                     <div class="form-group">
                         <label for="surname" class="mt-2 mx-2">Last Name<span class="text-danger">*</span>:</label>
                         <input type="text" name="surname" id="surname"
                             class="form-control home-form-style form-width-setting py-0" formControlName="surname">
+                        <span
+                            *ngIf="productOrderForm.get('surname')?.touched && productOrderForm.get('surname')?.invalid"
+                            class="text-danger">
+                            Surname is required
+                        </span>
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="mt-2 mx-2">Email adress<span class="text-danger">*</span>:</label>
                         <input type="email" class="form-control home-form-style form-width-setting py-0" name="email"
                             id="email" formControlName="email">
+                        <span *ngIf="productOrderForm.get('email')?.touched && productOrderForm.get('email')?.invalid">
+                            <span *ngIf="productOrderForm.get('email')?.errors?.['required']" class="text-danger">Email
+                                is required.</span>
+                            <span *ngIf="productOrderForm.get('email')?.errors?.['email']" class="text-danger">Invalid
+                                email address.</span>
+                        </span>
                     </div>
                     <div class="form-group">
-                        <label for="phone" class="mt-2 mx-2">Phone Number</label>
+                        <label for="phone" class="mt-2 mx-2">Phone Number<span class="text-danger">*</span>:</label>
                         <input type="text" class="form-control home-form-style form-width-setting py-0" name="phone"
                             id="phone" formControlName="phone">
+                            <span *ngIf="productOrderForm.get('phone')?.touched && productOrderForm.get('phone')?.invalid"
+                            class="text-danger">
+                            Phone is required.
+                        </span>
                     </div>
                     <div class="form-group">
                         <label for="adress" class="mt-2 mx-2">Adress<span class="text-danger">*</span>:</label>
                         <input type="text" class="form-control home-form-style form-width-setting py-0" name="adress"
                             id="adress" formControlName="adress">
+                        <span *ngIf="productOrderForm.get('adress')?.touched && productOrderForm.get('adress')?.invalid"
+                            class="text-danger">
+                            Address is required.
+                        </span>
                     </div>
                     <div class="form-group">
                         <label for="comment" class="mt-2 mx-2">Comment:</label>
@@ -44,6 +68,11 @@
                             <option value="paypal">PayPal</option>
                             <option value="payondelivery">Payment on Delivery</option>
                         </select>
+                        <span
+                            *ngIf="productOrderForm.get('payment')?.touched && productOrderForm.get('payment')?.invalid"
+                            class="text-danger">
+                            Payment method is required.
+                        </span>
                     </div>
 
                     <br>

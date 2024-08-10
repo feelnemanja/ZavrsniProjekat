@@ -39,6 +39,10 @@ export class ProductOrderComponent implements OnInit {
       this.productOrderForm.reset();
       this.clearCart();
     }
+    else{
+      this.productOrderForm.markAllAsTouched();
+      alert("Please fill up form as its shown");
+    }
   }
 
   clearCart() {

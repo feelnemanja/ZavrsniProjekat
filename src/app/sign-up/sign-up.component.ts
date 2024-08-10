@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../services/auth-service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,13 +14,43 @@ import { RouterModule } from '@angular/router';
 export class SignUpComponent {
 
   @ViewChild("myForm") signUpForm: NgForm;
+  isModalVisible = false;
 
-  onSubmit() {
-    if (!this.signUpForm.valid) {
-      this.signUpForm.form.markAllAsTouched();
-      alert("Molim vas popunite formu ispravno");
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ){}
+ 
+
+  signUp(){
+    let formVal = this.signUpForm.form.value;
+    if(this.signUpForm.valid){
+      this.authService.checkIfUserExist(formVal).subscribe({
+        next: (res: any) => {
+          if(res){
+            this.authService.signUp(formVal).subscribe({
+              next: (data: any) => {
+                this.isModalVisible = true;
+              },
+              error: (err) => {
+                window.alert(err);
+              }
+            })
+          }
+        },
+        error: (err: any) => {
+          window.alert(err);
+        }
+      })
     }
-    console.log(this.signUpForm);
+    else{
+      this.signUpForm.form.markAllAsTouched();
+      alert("Please fill up form as its shown");
+    }
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
   }
 
 }

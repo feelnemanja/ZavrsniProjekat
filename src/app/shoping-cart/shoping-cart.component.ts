@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-shoping-cart',
   standalone: true,
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
 export class ShopingCartComponent {
 
   items = this.cartService.getItems();
+  quantity: number = 0;
 
   constructor(private cartService: CartService) { }
 
@@ -45,4 +47,5 @@ export class ShopingCartComponent {
     const shipping = this.calculateShipping() ? 0 : 100;
     return subtotal + shipping;
   }
+
 }

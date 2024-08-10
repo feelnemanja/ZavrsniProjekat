@@ -8,36 +8,42 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExample06">
+      
       <a class="navbar-brand" href="#"><img class="logosize" src="flowerLogo.png"></a>
-      <ul class="navbar-nav me-auto mb-2 mb-xl-0" id="linksposition">
-        <li class="nav-item">
-          <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-secondary" href="#">About</a>
-        </li>
-        <li class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
-          <a class="nav-link text-secondary" routerLink="/shop">Shop</a>
-        </li>
-        <li class="nav-item text-secondary">
-          <a class="nav-link text-secondary" href="#">Contact</a>
-        </li>
-        <div class="" id="IconsSM">
-          <i class="fa-solid fa-user px-1"></i>
-          <i class="fa-solid fa-caret-down px-1"></i>
-          <span routerLink="/login" style="cursor: pointer;"> Login </span>
-          <i class="fa-solid fa-cart-shopping px-1" routerLink="/shoppingcart" style="cursor: pointer;"></i>
 
-          <span class='badge badge-secondary' id='lblCartCount'> {{ totalQuantity }} </span><br>
+      <div class="navbar-links-position">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0" id="linksposition">
+          <li class="nav-item">
+            <a class="nav-link text-secondary" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" routerLink="/about">About</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link text-secondary" routerLink="/shop">Shop</a>
+          </li>
+          <li class="nav-item text-secondary">
+            <a class="nav-link text-secondary" href="#">Contact</a>
+          </li>
+          <div class="" id="iconsSM">
+            <i class="fa-solid fa-user px-1"></i>
+            <i class="fa-solid fa-caret-down px-1"></i>
+            <span *ngIf="!isLoggedIn" routerLink="/login" style="cursor: pointer;"> Login </span>
+            <span *ngIf="isLoggedIn" (click)="logout()" style="cursor: pointer;"> Logout </span>
+            <i class="fa-solid fa-cart-shopping px-1" routerLink="/shoppingcart" style="cursor: pointer;"></i>
 
-        </div>
-      </ul>
+            <span class='badge badge-secondary' id='lblCartCount'> {{ totalQuantity }} </span><br>
+            
+          </div>
+        </ul>
 
+      </div>
     </div>
-    <div class="" id="IconsLG">
+    <div class="" id="iconsLG">
       <i class="fa-solid fa-user px-1"></i>
       <i class="fa-solid fa-caret-down px-1"></i>
-      <span routerLink="/login" style="cursor: pointer;"> Login </span>
+      <span *ngIf="!isLoggedIn" routerLink="/login" style="cursor: pointer;"> Login </span>
+      <span *ngIf="isLoggedIn" (click)="logout()" style="cursor: pointer;"> Logout </span>
       <i class="fa-solid fa-cart-shopping px-1" routerLink="/shoppingcart" style="cursor: pointer;"></i>
       <span class='badge badge-secondary' id='lblCartCount'> {{ totalQuantity }} </span>
     </div>

@@ -1,0 +1,31 @@
+.background-photo-about{
+    background-image: url('/about-banner.jpg');
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.divs-position{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.about-divs-style{
+    
+    border-radius: 5%;
+    background-color: rgb(244, 244, 244);
+    min-height: 300px;
+}
+.gray-divs-wrap{
+    min-height: 600px;
+}
+ul{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}

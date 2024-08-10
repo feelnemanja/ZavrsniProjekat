@@ -30,9 +30,18 @@
       <span>{{product.description}} </span>
       <hr>
       <label>Quantity:</label><br>
-      <input type="number" [(ngModel)]="quantity" style="width: 100px;"><br>
+      <input type="number" [(ngModel)]="quantity" min="1" step="1" style="width: 100px;" required (input)="validateQuantity()"><br>
       <button class="btn btn-dark text-light mt-1" (click)="addToCart(product)"> Add to cart</button>
 
     </div>
   </div>
   <div>
+    <div class="modal" [ngClass]="{ 'show': isModalVisible }">
+      <div class="modal-contentt">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <p>Please, Login to continue enjoying shopping on our site.</p>
+        <button class="btn btn-dark text-light w-25 p-0 px-0 mt-1" routerLink="/login">Log In</button>
+        <p class="mt-1"> If you dont have an account, please Sign up!</p>
+        <button class="btn btn-dark text-light w-25 p-0 px-0 mt-1" routerLink="/signup">Sign Up</button>
+      </div>
+    </div>
