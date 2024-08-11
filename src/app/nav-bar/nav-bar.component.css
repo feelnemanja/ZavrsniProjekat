@@ -1,10 +1,12 @@
-.logosize{
+.logosize {
     width: 100px;
     height: 40px;
-    }
-.navbar-toggler-icon{
+}
+
+.navbar-toggler-icon {
     color: gray;
 }
+
 badge {
     padding-left: 10px;
     padding-right: 10px;
@@ -19,33 +21,52 @@ badge {
     vertical-align: top;
     margin-left: -10px;
 }
-#iconsSM{
+
+#iconsSM {
     display: none;
     padding: 0px;
 }
-#iconsLG{
+
+#iconsLG {
     display: block;
     padding-right: 50px;
 }
-#linksposition{
-    margin-left: 300px; 
-}
 
-.navbar-brand{
+.navbar-brand {
     padding-left: 50px;
 }
-@media (max-width: 992px){#linksposition{
-    margin-left: 0px;
-}}
-@media (max-width: 768px){
-    .navbar-brand{padding: 0;}
+
+.navbar-links-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-@media (max-width: 576px){
-    #IconsSM{
+
+@media (max-width: 992px) {
+    
+    .navbar-links-position {
+        position: relative;
+        top: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    #IconsSM {
         display: block;
     }
-    #IconsLG{
+
+    #IconsLG {
         display: none;
     }
-    .navbar-brand{padding: 0;}
+
+    .navbar-brand {
+        padding: 0;
+    }
 }

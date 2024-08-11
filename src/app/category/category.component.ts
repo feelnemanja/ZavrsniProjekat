@@ -41,7 +41,7 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  selectAccountByStatus(status: string) {
+  selectCategoryByStatus(status: string) {
     if (status === this.selectedStatus) {
       return;
     }

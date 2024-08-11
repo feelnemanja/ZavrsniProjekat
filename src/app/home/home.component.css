@@ -5,7 +5,7 @@
     justify-content: end;
     align-items: center;
     text-align: end;
-
+    background-image: url('/flowerBackground1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -85,6 +85,17 @@
 .help-block {
     color: red;
 }
+.info-subscribe-style{
+    min-height: 400px; 
+    padding-left: 60px;
+}
+.split-banner{
+    background-image: url('/FTD_SplitBanner_Merx_1.png'); 
+    background-size: cover; 
+    background-position: center; 
+    min-height: 400px;
+}
+
 
 @media (max-width: 992px) {
     .newsletterinput {

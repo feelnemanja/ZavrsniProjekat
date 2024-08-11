@@ -93,7 +93,7 @@ export class ProductComponent implements OnInit {
   }
   addToCart(product: Product) {
     if (!this.authService.userData) {
-      this.isModalVisible = true;  // Show modal if user is not logged in
+      this.isModalVisible = true; 
       return;
     }
     const quantityToAdd = this.quantity || 1;
@@ -113,11 +113,3 @@ export class ProductComponent implements OnInit {
     this.isModalVisible = false;
   }
 }
-
-
-
-
-
-
-
-

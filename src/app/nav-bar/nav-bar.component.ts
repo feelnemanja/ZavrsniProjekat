@@ -23,11 +23,9 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cartService.totalQuantity$.subscribe(
-      (totalQuantity: number) => {
-        this.totalQuantity = totalQuantity;
-      }
-    );
+    this.cartService.totalQuantity$.subscribe(quantity => {
+      this.totalQuantity = quantity;
+    });
     this.authService.userDataChanged.subscribe(user => {
       this.isLoggedIn = !!user;  
     });
